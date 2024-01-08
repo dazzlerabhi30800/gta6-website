@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+$background-color: #131319;
+$font-Poppins: "Poppins", sans-serif;
+$font-Anton: "Anton", sans-serif;
+$font-Bebas-Neue: "Bebas Neue", sans-serif;
+$logo-dimension: 55px;
+$animation-time: 18s;
+
+
+
+
+@mixin flexBox($flexDirection, $gap, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $flexDirection;
+  gap: $gap;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+
+#root {
+  min-height: 100vh;
+  color: #fff;
+  background: $background-color;
+}
+
+
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-Poppins;
+}
+
+section {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero--section {
+  background: url('/public/images/gta6-car.jpg') no-repeat;
+  background-attachment: fixed;
+  background-position: 0vh;
+  background-size: cover;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  animation: background $animation-time linear infinite alternate;
+
+  &>* {
+    position: relative;
+    z-index: 44;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: center;
+    transition: 0.3s ease-in-out;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.35));
+  }
+
+}
+
+
+@keyframes background {
+  0% {
+    background-position: 0vh;
+  }
+
+  100% {
+    background-position: 80%;
+  }
+}
+
+nav {
+  padding: 1.5rem 2rem;
+  position: relative;
+  @include flexBox(row, 0, space-between, center);
+
+  @media Screen and (max-width: 600px) {
+    padding: 1rem;
+  }
+
+  .logo {
+    width: $logo-dimension;
+    height: $logo-dimension;
+    object-fit: contain;
+  }
+
+  .links {
+    list-style: none;
+    @include flexBox(row, 1.5rem, center, center);
+
+    .link {
+      a {
+        color: #fff;
+        font-size: clamp(0.8rem, 2vw + 5px, 0.95rem);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+// Hero Wrapper
+.hero--wrapper {
+  margin: auto auto;
+  width: clamp(300px, 90%, 800px);
+  padding: 1rem;
+  border-radius: 5px;
+  position: relative;
+  font-weight: 500;
+  @include flexBox(column, 2rem, center, center);
+  text-align: center;
+
+  &>*:not(.trailer--btn) {
+    text-shadow: 0 0 15px #000;
+  }
+
+  h1 {
+    font-family: $font-Bebas-Neue;
+    font-size: clamp(2.3rem, 4.5vw, 4rem);
+    letter-spacing: 2px;
+  }
+
+  p {
+    font-size: clamp(1rem, 1.8vw, 1.18rem);
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .trailer--btn {
+    border: none;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    transition: 0.3s linear;
+
+    &:hover {
+      filter: brightness(0.7) contrast(0.8);
+    }
+  }
+}
+
+
+@media Screen and (min-width: 750px) {
+  $animation-time: 10s;
+}
+
+@media (hover:hover) {
+  button {
+    cursor: pointer;
+  }
+}
