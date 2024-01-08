@@ -12,7 +12,7 @@ $font-Poppins: "Poppins", sans-serif;
 $font-Anton: "Anton", sans-serif;
 $font-Bebas-Neue: "Bebas Neue", sans-serif;
 $logo-dimension: 55px;
-$animation-time: 18s;
+$animation-time: 12s;
 
 
 
@@ -54,7 +54,15 @@ section {
   background-size: cover;
   transition: 0.3s ease-in-out;
   position: relative;
-  animation: background $animation-time linear infinite alternate;
+  animation: backgroundMove linear infinite alternate;
+  animation-duration: $animation-time;
+
+  @media Screen and (min-width: 750px) {
+    & {
+      $animation-time: 5s;
+      animation-duration: $animation-time;
+    }
+  }
 
   &>* {
     position: relative;
@@ -69,19 +77,19 @@ section {
     width: 100%;
     transform-origin: center;
     transition: 0.3s ease-in-out;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.35));
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
   }
 
 }
 
 
-@keyframes background {
+@keyframes backgroundMove {
   0% {
-    background-position: 0vh;
+    background-position: 0%;
   }
 
   100% {
-    background-position: 80%;
+    background-position: 6vw 3vh;
   }
 }
 
@@ -160,9 +168,6 @@ nav {
 }
 
 
-@media Screen and (min-width: 750px) {
-  $animation-time: 10s;
-}
 
 @media (hover:hover) {
   button {
