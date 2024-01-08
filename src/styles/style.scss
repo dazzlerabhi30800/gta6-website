@@ -32,7 +32,17 @@ $animation-time: 12s;
 }
 
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
 
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
 main {
   min-height: 100vh;
   display: flex;
