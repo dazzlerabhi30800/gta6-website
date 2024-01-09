@@ -18,7 +18,7 @@ export default function HeroSection() {
     gsap.fromTo(
       ".trailer--btn",
       { x: "300%", opacity: 0, duration: 2, ease: "Power3.easeOut" },
-      { x: 0, opacity: 1, duration: 1.5, delay: 2},
+      { x: 0, opacity: 1, duration: 1.5, delay: 2 },
     );
   });
   return (

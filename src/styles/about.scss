@@ -1,0 +1,54 @@
+// @import './mixin.scss';
+
+
+.about--section {
+  @include flexBox(column, 0rem, center, center);
+  margin-top: 10rem;
+
+  h1 {
+    @include fontClamp(2.5rem, 3vw, 10px, 4rem);
+    @include fontBebas;
+  }
+
+  .info--container {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    width: 90%;
+    margin-top: 1rem;
+    padding: 2rem;
+    gap: 4rem;
+
+
+    img {
+      width: 100%;
+      height: inherit;
+      object-fit: cover;
+      border-radius: 5px;
+      filter: drop-shadow(1px 1px 15px rgba(0, 0, 0, 0.5));
+    }
+
+    h2 {
+      font-weight: 500;
+      margin-top: 1.5rem;
+      line-height: 1.8;
+      @include fontClamp(1rem, 1.5vw, 3px, 1.2rem);
+    }
+
+    @media Screen and (min-width: 750px) {
+      & {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      h2 {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}
+
+.highlight--text {
+  color: pink;
+  font-style: italic;
+}

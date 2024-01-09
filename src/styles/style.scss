@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Poppins:wght@400;500;600;700&display=swap');
 
+
+
+// Variables
+$background-color: #131319;
+$font-Poppins: "Poppins", sans-serif;
+$font-Anton: "Anton", sans-serif;
+$font-Bebas-Neue: "Bebas Neue", sans-serif;
+$logo-dimension: 55px;
+$animation-time: 10s;
+
+// imports
+@import './mixin.scss';
+@import './about.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +21,10 @@
 }
 
 
-$background-color: #131319;
-$font-Poppins: "Poppins", sans-serif;
-$font-Anton: "Anton", sans-serif;
-$font-Bebas-Neue: "Bebas Neue", sans-serif;
-$logo-dimension: 55px;
-$animation-time: 12s;
 
 
 
 
-@mixin flexBox($flexDirection, $gap, $justifyContent, $alignItems) {
-  display: flex;
-  flex-direction: $flexDirection;
-  gap: $gap;
-  align-items: $alignItems;
-  justify-content: $justifyContent;
-}
 
 #root {
   min-height: 100vh;
@@ -35,6 +36,7 @@ $animation-time: 12s;
 html {
   overflow-x: hidden;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -43,6 +45,7 @@ body {
   width: 100%;
   position: relative;
 }
+
 main {
   min-height: 100vh;
   display: flex;
@@ -60,18 +63,18 @@ section {
 .hero--section {
   background: url('/public/images/gta6-car.jpg') no-repeat;
   background-attachment: fixed;
-  background-position: 0vh;
+  background-position: center;
   background-size: cover;
   transition: 0.3s ease-in-out;
   position: relative;
-  animation: backgroundMove linear infinite alternate-reverse;
-  animation-duration: $animation-time;
 
   @media Screen and (min-width: 750px) {
     & {
-      $animation-time: 8s;
+  background-position: 0vh;
+      animation: backgroundMove linear infinite alternate-reverse;
       animation-duration: $animation-time;
     }
+
   }
 
   &>* {
@@ -145,7 +148,7 @@ nav {
   border-radius: 5px;
   position: relative;
   font-weight: 500;
-  @include flexBox(column, 2rem, center, center);
+  @include flexBox(column, 4rem, center, center);
   text-align: center;
 
   &>*:not(.trailer--btn) {

@@ -1,0 +1,25 @@
+@mixin flexBox($flexDirection, $gap, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $flexDirection;
+  gap: $gap;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+
+
+@mixin fontClamp($min, $value1, $value2, $max) {
+  font-size: clamp($min, $value1 + $value2, $max);
+}
+
+
+@mixin fontAnton {
+  font-family: $font-Anton;
+}
+
+@mixin fontBebas {
+  font-family: $font-Bebas-Neue;
+}
+
+@mixin fontPoppins {
+  font-family: $font-Poppins;
+}
