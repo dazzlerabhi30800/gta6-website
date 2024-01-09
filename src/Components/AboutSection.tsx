@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import img1 from "/public/images/gta6-billboard.jpg";
-import img2 from "/public/images/gta6-city.jpg";
+import img1 from "/images/gta6-billboard.jpg";
+import img2 from "/images/gta6-city.jpg";
 import gsap from "gsap";
 
 export default function AboutSection() {
