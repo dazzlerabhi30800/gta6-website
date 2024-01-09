@@ -34,7 +34,7 @@ export default function AboutSection() {
             duration: 2,
             scrollTrigger: {
               trigger: container,
-              start: "0% 83%",
+              start: `0% 83%`,
               end: "bottom 100%",
             },
           },
