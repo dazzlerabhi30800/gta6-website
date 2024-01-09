@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import img1 from "/public/images/gta6-billboard.jpg";
 import img2 from "/public/images/gta6-city.jpg";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
   useEffect(() => {
@@ -19,36 +17,27 @@ export default function AboutSection() {
         },
       },
     );
-    document.querySelectorAll(".info--container img").forEach((img) => {
-      gsap.fromTo(
-        img,
-        { x: "-500%", duration: 1.5 },
-        {
-          x: 0,
-          duration: 1.5,
-          scrollTrigger: {
-            trigger: img,
-            start: "top 90%",
-            end: "bottom 100%",
+    document
+      .querySelectorAll(".info--container")
+      .forEach((container, index) => {
+        gsap.fromTo(
+          container,
+          { y: "-100%", opacity: 0, duration: 1 * (index + 1) },
+          {
+            y: 0,
+            opacity: 1,
+            delay: 1,
+            ease: "elastic.out(i, 0.3)",
+            duration: 4,
+            scrollTrigger: {
+              trigger: container,
+              start: "50% 90%",
+              // markers: true,
+              end: "bottom 100%",
+            },
           },
-        },
-      );
-    });
-    document.querySelectorAll(".info--container h2").forEach((heading) => {
-      gsap.fromTo(
-        heading,
-        { x: "500%", duration: 1.5 },
-        {
-          x: 0,
-          duration: 1.5,
-          scrollTrigger: {
-            trigger: heading,
-            start: "top 90%",
-            end: "bottom 100%",
-          },
-        },
-      );
-    });
+        );
+      });
   }, []);
   return (
     <section className="section about--section">
@@ -68,8 +57,8 @@ export default function AboutSection() {
           One last ride into crime realm of{" "}
           <span className="highlight--text">Vice City</span>, Rule the
           streets,Conquer the Chaos: GTA6, Where crime meets Next-Gen. This next
-          entry in the Grand Theft Auto will set a benchmark in the world of
-          Gaming.
+          entry in the Grand Theft Auto Franchise will set a benchmark in the
+          world of Gaming.
         </h2>
       </div>
     </section>
