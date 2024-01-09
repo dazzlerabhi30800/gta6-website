@@ -20,11 +20,6 @@ $animation-time: 10s;
   box-sizing: border-box;
 }
 
-
-
-
-
-
 #root {
   min-height: 100vh;
   color: #fff;
@@ -37,10 +32,12 @@ html {
   width: 100%;
   scroll-behavior: smooth;
 }
+
 html::-webkit-scrollbar {
   background: #0f121c;
   width: 8px;
 }
+
 html::-webkit-scrollbar-thumb {
   background: white;
   border-radius: 0 5px 5px 0;

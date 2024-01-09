@@ -22,17 +22,21 @@ export default function AboutSection() {
       .forEach((container, index) => {
         gsap.fromTo(
           container,
-          { y: "-100%", opacity: 0, duration: 1 * (index + 1) },
           {
-            y: 0,
+            x: (index + 1) % 2 == 0 ? "-300%" : "300%",
+            opacity: 0,
+            duration: 1 * (index + 1),
+          },
+          {
+            x: 0,
             opacity: 1,
-            delay: 1,
-            ease: "elastic.out(i, 0.3)",
-            duration: 4,
+            // delay: 1,
+            ease: "elastic.out(i, 0.8)",
+            duration: 2,
             scrollTrigger: {
               trigger: container,
-              start: "50% 90%",
-              // markers: true,
+              start: "0% 83%",
+              markers: true,
               end: "bottom 100%",
             },
           },
