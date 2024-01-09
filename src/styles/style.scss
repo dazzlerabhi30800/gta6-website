@@ -13,6 +13,7 @@ $animation-time: 10s;
 // imports
 @import './mixin.scss';
 @import './about.scss';
+@import './online.scss';
 
 * {
   margin: 0;
@@ -62,6 +63,17 @@ section {
   min-height: 100vh;
   flex-direction: column;
   gap: 1rem;
+}
+
+.section {
+  @include flexBox(column, 3rem, center, center);
+  margin-top: 10rem;
+  padding: 3rem 0;
+
+  h1 {
+    @include fontClamp(2.5rem, 3vw, 10px, 4rem);
+    @include fontBebas;
+  }
 }
 
 .hero--section {

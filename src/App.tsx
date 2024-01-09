@@ -1,5 +1,6 @@
 import AboutSection from "./Components/AboutSection";
 import HeroSection from "./Components/HeroSection";
+import OnlineSection from "./Components/OnlineSection";
 import "./styles/style.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,6 +12,7 @@ function App() {
       <main>
         <HeroSection />
         <AboutSection />
+        <OnlineSection />
       </main>
     </>
   );

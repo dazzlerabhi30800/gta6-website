@@ -2,14 +2,6 @@
 
 
 .about--section {
-  @include flexBox(column, 0rem, center, center);
-  margin-top: 10rem;
-  padding: 3rem 0;
-
-  h1 {
-    @include fontClamp(2.5rem, 3vw, 10px, 4rem);
-    @include fontBebas;
-  }
 
   .info--container {
     display: grid;
@@ -36,12 +28,13 @@
       @include fontClamp(0.9rem, 1vw, 2px, 1.2rem);
     }
 
-    @media Screen and (min-width: 750px) {
+    @media Screen and (min-width: 800px) {
       & {
         grid-template-columns: repeat(2, 1fr);
         margin-top: 4rem;
         width: 80%;
         gap: 4rem;
+
         &:nth-child(3) {
           img {
             order: 2;
