@@ -14,7 +14,7 @@ export default function OnlineComp({ item }: { item: postType }) {
           ease: "elastic.out(i, 1)",
           scrollTrigger: {
             trigger: container,
-            start: "0% 83%",
+            start: "0% 71%",
             end: "bottom 100%",
           },
         },
