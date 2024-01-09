@@ -1,10 +1,58 @@
+import { useEffect } from "react";
 import img1 from "/public/images/gta6-billboard.jpg";
 import img2 from "/public/images/gta6-city.jpg";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
+  useEffect(() => {
+    gsap.fromTo(
+      ".section--heading",
+      { x: "-500%", duration: 3 },
+      {
+        x: 0,
+        scrollTrigger: {
+          trigger: ".section--heading",
+          start: "top 90%",
+          end: "bottom 100%",
+        },
+      },
+    );
+    document.querySelectorAll(".info--container img").forEach((img) => {
+      gsap.fromTo(
+        img,
+        { x: "-500%", duration: 1.5 },
+        {
+          x: 0,
+          duration: 1.5,
+          scrollTrigger: {
+            trigger: img,
+            start: "top 90%",
+            end: "bottom 100%",
+          },
+        },
+      );
+    });
+    document.querySelectorAll(".info--container h2").forEach((heading) => {
+      gsap.fromTo(
+        heading,
+        { x: "500%", duration: 1.5 },
+        {
+          x: 0,
+          duration: 1.5,
+          scrollTrigger: {
+            trigger: heading,
+            start: "top 90%",
+            end: "bottom 100%",
+          },
+        },
+      );
+    });
+  }, []);
   return (
     <section className="section about--section">
-      <h1>About this Game</h1>
+      <h1 className="section--heading">About this Game</h1>
       <div className="info--container">
         <img src={img1} alt="gta6" />
         <h2>

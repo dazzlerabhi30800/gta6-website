@@ -70,7 +70,7 @@ section {
 
   @media Screen and (min-width: 750px) {
     & {
-  background-position: 0vh;
+      background-position: 0vh;
       animation: backgroundMove linear infinite alternate-reverse;
       animation-duration: $animation-time;
     }

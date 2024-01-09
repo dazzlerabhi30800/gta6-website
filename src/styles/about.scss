@@ -4,6 +4,7 @@
 .about--section {
   @include flexBox(column, 0rem, center, center);
   margin-top: 10rem;
+  padding: 3rem 0;
 
   h1 {
     @include fontClamp(2.5rem, 3vw, 10px, 4rem);
