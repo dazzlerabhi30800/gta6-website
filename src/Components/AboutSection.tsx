@@ -30,13 +30,11 @@ export default function AboutSection() {
           {
             x: 0,
             opacity: 1,
-            // delay: 1,
-            ease: "elastic.out(i, 0.8)",
+            ease: "elastic.out(i, 1)",
             duration: 2,
             scrollTrigger: {
               trigger: container,
               start: "0% 83%",
-              markers: true,
               end: "bottom 100%",
             },
           },
