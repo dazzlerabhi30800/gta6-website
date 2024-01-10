@@ -3,9 +3,17 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-export default function OnlineComp({ item }: { item: postType }) {
+export default function OnlineComp({
+  item,
+  postRef,
+}: {
+  item: postType;
+  postRef: React.MutableRefObject<HTMLDivElement | null>;
+}) {
   useEffect(() => {
-    document.querySelectorAll(".post").forEach((container) => {
+    let children = postRef.current?.children;
+    if (!children) return;
+    Object.values(children).forEach((container) => {
       gsap.fromTo(
         container,
         { scaleX: 0, opacity: 0, duration: 1 },

@@ -1,13 +1,15 @@
 import OnlineComp from './OnlineComp';
 import onlineData from './data/onlineData.json';
+import {useRef} from 'react';
 
 export default function OnlineSection() {
+  const postRef = useRef<HTMLDivElement | any>();
   return (
     <section className="section online--section">
       <h1>GTA6 Online</h1>
-      <div className="post--wrapper">
+      <div ref={postRef} className="post--wrapper">
         {onlineData.map((item: postType, index: number) => {
-          return <OnlineComp key={index} item={item} />
+          return <OnlineComp key={index} item={item} postRef={postRef} />
         })}
       </div>
     </section>

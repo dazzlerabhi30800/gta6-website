@@ -7,18 +7,18 @@ export default function HeroSection() {
   useEffect(() => {
     gsap.fromTo(
       ".hero--wrapper h1",
-      { x: "300%", opacity: 0, duration: 1, ease: "Power3.easeOut" },
-      { x: 0, opacity: 1, duration: 1.5 },
+      { scale: 0, opacity: 0, duration: 1, ease: "elastic.out(i, 4)" },
+      { scale: 1, opacity: 1, duration: 1 },
     );
     gsap.fromTo(
       ".hero--wrapper p",
-      { x: "300%", opacity: 0, duration: 1, ease: "Power3.easeOut" },
-      { x: 0, opacity: 1, duration: 1.5, delay: 1 },
+      { scale: 0, opacity: 0, duration: 1, ease: "elastic.out(i, 4)" },
+      { scale: 1, opacity: 1, duration: 1 },
     );
     gsap.fromTo(
       ".trailer--btn",
-      { x: "300%", opacity: 0, duration: 2, ease: "Power3.easeOut" },
-      { x: 0, opacity: 1, duration: 1.5, delay: 2 },
+      { scale: 0, opacity: 0, duration: 1, ease: "elastic.out(i, 4)" },
+      { scale: 1, opacity: 1, duration: 1 },
     );
   });
   return (
