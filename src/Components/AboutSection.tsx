@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import img1 from "/images/gta6-billboard.jpg";
 import img2 from "/images/gta6-city.jpg";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
   useEffect(() => {
