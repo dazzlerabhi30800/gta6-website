@@ -2,6 +2,12 @@
 
 type postType = {
   title: string,
-  img: string,
+  img: string | null,
   description: Array<string>
+}
+
+type storyType = {
+  title: string,
+  img: string,
+  time: string,
 }

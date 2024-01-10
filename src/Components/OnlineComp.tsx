@@ -38,7 +38,7 @@ export default function OnlineComp({
   }, [client]);
   return (
     <div className="post--container">
-      <img src={item.img} alt={item.title} />
+      {item.img && <img src={item.img} alt={item.title} />}
       <div className="post">
         <h2>{item.title}</h2>
         {item.description.map((desc: string, index: number) => (
