@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -10,9 +10,11 @@ export default function OnlineComp({
   item: postType;
   postRef: React.MutableRefObject<HTMLDivElement | null>;
 }) {
+  const [client, setClient] = useState<boolean>(false);
   useEffect(() => {
     let children = postRef.current?.children;
-    if (!children) return;
+    let timeout = setTimeout(() => { setClient(prev => prev = true)}, 1000);
+    if (!children || !client) return;
     Object.values(children).forEach((container) => {
       gsap.fromTo(
         container,
@@ -31,7 +33,8 @@ export default function OnlineComp({
         },
       );
     });
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [client]);
   return (
     <div className="post--container">
       <img src={item.img} alt={item.title} />
