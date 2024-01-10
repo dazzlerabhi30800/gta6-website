@@ -28,7 +28,6 @@ export default function OnlineComp({
           ease: "elastic.out(i, 1)",
           scrollTrigger: {
             trigger: container.querySelector(".post"),
-            markers: true,
             start: "0% 71%",
             end: "bottom 100%",
           },
