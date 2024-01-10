@@ -13,7 +13,7 @@ export default function OnlineComp({
   const [client, setClient] = useState<boolean>(false);
   useEffect(() => {
     let children = postRef.current?.children;
-    let timeout = setTimeout(() => { setClient(prev => prev = true)}, 1000);
+    let timeout = setTimeout(() => { setClient(true)}, 1000);
     if (!children || !client) return;
     Object.values(children).forEach((container) => {
       gsap.fromTo(
