@@ -13,11 +13,13 @@ export default function OnlineComp({
   const [client, setClient] = useState<boolean>(false);
   useEffect(() => {
     let children = postRef.current?.children;
-    let timeout = setTimeout(() => { setClient(true)}, 1000);
+    let timeout = setTimeout(() => {
+      setClient(true);
+    }, 1000);
     if (!children || !client) return;
     Object.values(children).forEach((container) => {
       gsap.fromTo(
-        container,
+        container.querySelector(".post"),
         { scaleX: 0, opacity: 0, duration: 1 },
         {
           scaleX: 1,
@@ -25,7 +27,8 @@ export default function OnlineComp({
           duration: 1,
           ease: "elastic.out(i, 1)",
           scrollTrigger: {
-            trigger: container,
+            trigger: container.querySelector(".post"),
+            markers: true,
             start: "0% 71%",
             end: "bottom 100%",
           },
