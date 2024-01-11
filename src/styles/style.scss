@@ -165,7 +165,15 @@ nav {
       a {
         color: #fff;
         font-size: clamp(0.8rem, 2vw + 5px, 0.95rem);
+        border: 1px solid #fff;
+        padding: 5px 10px;
         text-decoration: none;
+        transition: 0.3s linear;
+
+        &:hover {
+          color: #ccc;
+          border-color: #ccc;
+        }
       }
     }
   }
