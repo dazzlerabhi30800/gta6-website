@@ -23,3 +23,7 @@
 @mixin fontPoppins {
   font-family: $font-Poppins;
 }
+
+@function transparentBackground($color, $opacity) {
+  @return rgba($color, $color, $color, $opacity);
+}

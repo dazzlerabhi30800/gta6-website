@@ -1,0 +1,59 @@
+$highlight-color: #F92294;
+
+.new--section {
+  margin-bottom: 8rem;
+
+  .one {
+    background: url('/images/gta6-car.jpg') no-repeat center;
+  }
+
+  .two {
+    background: url("/public/images/gta6-city.jpg") no-repeat center;
+  }
+
+  .three {
+    background: url("/public/images/gta6-billboard.jpg") no-repeat center;
+  }
+
+
+  .new--comp {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-size: cover;
+    width: 100%;
+    border: 1px solid $highlight-color;
+    max-width: 1000px;
+    height: 400px;
+    margin-top: 2rem;
+
+
+    .new--info {
+      display: flex;
+      width: inherit;
+      height: inherit;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0 3rem;
+      justify-content: center;
+      backdrop-filter: blur(3px);
+      background: radial-gradient(circle, transparentBackground(0, 0.4) 50%, transparentBackground(0, 0.75));
+
+
+      p {
+        font-weight: 500;
+        line-height: 1.9;
+        text-shadow: 0 0 15px transparentBackground(0, 1);
+      }
+
+      .highlight--text {
+        background: #000;
+        padding: 0 6px;
+        border-radius: 3px;
+        color: $highlight-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+}
