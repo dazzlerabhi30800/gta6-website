@@ -22,7 +22,7 @@ export default function HeroSection() {
     );
   });
   return (
-    <section className="hero--section">
+    <section className="hero--section" id="home">
       <Navbar />
       <div className="hero--wrapper">
         <h1>welcome to leonida</h1>

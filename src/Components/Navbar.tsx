@@ -1,23 +1,17 @@
+import logo from "/images/logo.png";
 export default function Navbar() {
   return (
     <nav>
-      <img
-        className="logo"
-        src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/d358ca0f4ef1b724361c30dd82547992.png"
-        alt="GTA 6"
-      />
+      <img className="logo" src={logo} alt="GTA 6" />
       <ul className="links">
         <li className="link">
-          <a href="#">Home</a>
+          <a href="#about">About</a>
         </li>
         <li className="link">
-          <a href="#">About</a>
+          <a href="#post">Post</a>
         </li>
         <li className="link">
-          <a href="#">Contact</a>
-        </li>
-        <li className="link">
-          <a href="#">Blog</a>
+          <a href="#story">Story</a>
         </li>
       </ul>
     </nav>

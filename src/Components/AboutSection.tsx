@@ -44,7 +44,7 @@ export default function AboutSection() {
       });
   }, []);
   return (
-    <section className="section about--section">
+    <section className="section about--section" id="about">
       <h1 className="section--heading">About this Game</h1>
       <div className="info--container">
         <img src={img1} alt="gta6" />

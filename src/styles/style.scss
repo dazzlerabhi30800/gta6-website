@@ -7,7 +7,7 @@ $background-color: #131319;
 $font-Poppins: "Poppins", sans-serif;
 $font-Anton: "Anton", sans-serif;
 $font-Bebas-Neue: "Bebas Neue", sans-serif;
-$logo-dimension: 55px;
+$logo-dimension: 42px;
 $animation-time: 10s;
 
 // imports
@@ -15,6 +15,7 @@ $animation-time: 10s;
 @import './about.scss';
 @import './online.scss';
 @import './stories.scss';
+@import './footer.scss';
 
 * {
   margin: 0;
@@ -37,12 +38,12 @@ html {
 
 html::-webkit-scrollbar {
   background: #0f121c;
-  width: 7px;
+  width: 8px;
 }
 
 html::-webkit-scrollbar-thumb {
   background: white;
-  border-radius: 0 5px 5px 0;
+  border-radius: 8px;
 }
 
 body {
@@ -56,6 +57,9 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
   font-family: $font-Poppins;
 }
 
@@ -69,6 +73,7 @@ section {
 .section {
   @include flexBox(column, 3rem, center, center);
   margin-top: 10rem;
+  overflow: auto;
   padding: 3rem 0;
 
   h1 {
@@ -140,7 +145,17 @@ nav {
     width: $logo-dimension;
     height: $logo-dimension;
     object-fit: contain;
+
+    @media Screen and (min-width: 800px) {
+      $logo-dimension: 55px;
+
+      & {
+        width: $logo-dimension;
+        height: $logo-dimension;
+      }
+    }
   }
+
 
   .links {
     list-style: none;

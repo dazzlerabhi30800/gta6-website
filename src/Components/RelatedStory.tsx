@@ -2,7 +2,7 @@ import storyData from "./data/relatedStories.json";
 
 export default function RelatedStory() {
   return (
-    <section className="section story--section">
+    <section className="section story--section" id="story">
       <h1>Related Stories</h1>
       <div className="stories--wrapper">
         {storyData.map((story: storyType, index: number) => (
