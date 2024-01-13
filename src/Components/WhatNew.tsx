@@ -31,7 +31,7 @@ export default function WhatNewSection() {
     return () => clearTimeout(timeout);
   }, [load]);
   return (
-    <section className="section new--section">
+    <section className="section new--section" id="new">
       <h1>What's New</h1>
       <div className="new--comp one">
         <div className="new--info">

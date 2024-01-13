@@ -13,6 +13,9 @@ export default function Navbar() {
         <li className="link">
           <a href="#story">Story</a>
         </li>
+        <li className="link">
+          <a href="#new">What's New</a>
+        </li>
       </ul>
     </nav>
   );
