@@ -12,7 +12,7 @@ function App() {
       <main>
         <HeroSection />
         <AboutSection />
-        <OnlineSection  />
+        <OnlineSection />
         <RelatedStory />
         <WhatNewSection />
         <Footer />
