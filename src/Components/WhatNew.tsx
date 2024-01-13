@@ -1,10 +1,13 @@
 import gsap from "gsap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function WhatNewSection() {
+  const [client, setClient] = useState<boolean>(false);
   useEffect(() => {
+    let timeout = setTimeout(() => setClient(true), 1000);
+    if (!client) return;
     document.querySelectorAll(".new--comp").forEach((comp) => {
       gsap.fromTo(
         comp,
@@ -22,7 +25,8 @@ export default function WhatNewSection() {
         },
       );
     });
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [client]);
   return (
     <section className="section new--section">
       <h1>What's New</h1>
