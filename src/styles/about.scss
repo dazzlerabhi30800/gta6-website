@@ -2,7 +2,7 @@
 
 
 .about--section {
-
+  overflow-x: none;
   .info--container {
     display: grid;
     grid-template-columns: repeat(1, 100%);

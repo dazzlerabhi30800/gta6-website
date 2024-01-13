@@ -2,7 +2,7 @@ import OnlineComp from './OnlineComp';
 import onlineData from './data/onlineData.json';
 import {useRef} from 'react';
 
-export default function OnlineSection() {
+export default function OnlineSection({client}: {client: boolean}) {
   const postRef = useRef<HTMLDivElement | any>();
   return (
     <section className="section online--section" id="post">

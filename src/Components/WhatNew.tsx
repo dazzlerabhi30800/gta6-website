@@ -1,4 +1,28 @@
+import gsap from "gsap";
+import { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 export default function WhatNewSection() {
+  useEffect(() => {
+    document.querySelectorAll(".new--comp").forEach((comp) => {
+      gsap.fromTo(
+        comp,
+        { scale: 0, opacity: 0, duration: 1, ease: "elastic.out(i, 6)" },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          ease: "elastic.out(i, 6)",
+          scrollTrigger: {
+            trigger: comp,
+            start: "0% 71%",
+            end: "bottom 100%",
+          },
+        },
+      );
+    });
+  }, []);
   return (
     <section className="section new--section">
       <h1>What's New</h1>
