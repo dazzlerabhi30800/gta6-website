@@ -20,9 +20,9 @@ export default function OnlineComp({
     Object.values(children).forEach((container) => {
       gsap.fromTo(
         container.querySelector(".post"),
-        { scaleX: 0, opacity: 0, duration: 1 },
+        { scaleY: 0, opacity: 0, duration: 1 },
         {
-          scaleX: 1,
+          scaleY: 1,
           opacity: 1,
           duration: 1,
           ease: "elastic.out(i, 1)",

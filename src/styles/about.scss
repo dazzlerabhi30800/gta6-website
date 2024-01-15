@@ -2,13 +2,14 @@
 
 
 .about--section {
-  overflow-x: none;
+  overflow: hidden;
   .info--container {
     display: grid;
     grid-template-columns: repeat(1, 100%);
     width: 90%;
     margin-top: 1rem;
     padding: 2rem;
+    overflow: hidden;
     gap: 1rem;
     transition: 0.3s linear;
 
